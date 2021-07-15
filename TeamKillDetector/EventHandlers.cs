@@ -12,7 +12,7 @@ namespace TeamKillDetector
         public void OnDied(DiedEventArgs ev)
         {
             if (ev.Target.Team == ev.Killer.Team)
-                ev.Target.Broadcast(Plugin.instance.Config.Time, Plugin.instance.Config.Message);
+                ev.Target.Broadcast(Plugin.instance.Config.Time, Plugin.instance.Config.Message.Replace("{Player}", $"{ev.Killer.Nickname} {ev.Killer.RawUserId}").Replace("{Time}", DateTime.Now.ToString()));
         }
     }
 }

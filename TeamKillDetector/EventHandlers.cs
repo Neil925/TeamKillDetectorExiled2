@@ -11,7 +11,7 @@ namespace TeamKillDetector
     {
         public void OnDied(DiedEventArgs ev)
         {
-            if (ev.Target.Side == ev.Killer.Side)
+            if (ev.Target.Side == ev.Killer.Side && ev.Killer != ev.Target)
                 ev.Target.Broadcast(Plugin.instance.Config.Time, Plugin.instance.Config.Message.Replace("{Player}", $"{ev.Killer.Nickname} {ev.Killer.RawUserId}").Replace("{Time}", DateTime.Now.ToString()));
         }
     }

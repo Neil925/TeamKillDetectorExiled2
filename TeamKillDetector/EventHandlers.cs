@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using Exiled.Events.EventArgs;
 
 namespace TeamKillDetector
@@ -12,7 +9,7 @@ namespace TeamKillDetector
         public void OnDied(DiedEventArgs ev)
         {
             if (ev.Target.Side == ev.Killer.Side && ev.Killer != ev.Target)
-                ev.Target.Broadcast(Plugin.instance.Config.Time, Plugin.instance.Config.Message.Replace("{Player}", $"{ev.Killer.Nickname} {ev.Killer.RawUserId}").Replace("{Time}", DateTime.Now.ToString()));
+                ev.Target.Broadcast(Plugin.instance.Config.Time, Plugin.instance.Config.Message.Replace("{Player}", $"{ev.Killer.Nickname}{(Plugin.instance.Config.InludeID ? " (" + ev.Killer.RawUserId + ")" : "")}").Replace("{Time}", DateTime.Now.ToString(CultureInfo.InvariantCulture)));
         }
     }
 }

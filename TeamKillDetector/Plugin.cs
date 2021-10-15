@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Exiled.API.Features;
 
 using PlayerE = Exiled.Events.Handlers.Player;
@@ -12,10 +8,10 @@ namespace TeamKillDetector
     public class Plugin : Plugin<Config>
     {
         public static Plugin instance;
-        public override string Name { get; } = "TeamKillDetector";
-        public override string Author { get; } = "Neil";
-        public override Version Version { get; } = new Version(1, 0, 0);
-        public override Version RequiredExiledVersion { get; } = new Version(2, 11, 0);
+        public override string Name => "TeamKillDetector";
+        public override string Author => "Neil";
+        public override Version Version => new Version(2, 0, 0);
+        public override Version RequiredExiledVersion => new Version(3, 0, 5);
 
         private EventHandlers _handler;
 

@@ -14,6 +14,6 @@ namespace TeamKillDetector
         public ushort Time { get; private set; } = 8;
 
         [Description("Whether or not to display a the ID in the kill message.")]
-        public bool InludeID { get; private set; } = false;
+        public bool IncludeID { get; private set; } = false;
     }
 }

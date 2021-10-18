@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Exiled.API.Features;
 
 using PlayerE = Exiled.Events.Handlers.Player;
@@ -23,7 +23,7 @@ namespace TeamKillDetector
 
             PlayerE.Died += _handler.OnDied;
 
-            base.OnDisabled();
+            base.OnEnabled();
         }
 
         public override void OnDisabled()

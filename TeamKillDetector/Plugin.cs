@@ -10,7 +10,7 @@ namespace TeamKillDetector
         public static Plugin instance;
         public override string Name => "TeamKillDetector";
         public override string Author => "Neil";
-        public override Version Version => new Version(2, 0, 0);
+        public override Version Version => new Version(2, 0, 1);
         public override Version RequiredExiledVersion => new Version(3, 0, 5);
 
         private EventHandlers _handler;
@@ -23,7 +23,7 @@ namespace TeamKillDetector
 
             PlayerE.Died += _handler.OnDied;
 
-            base.OnDisabled();
+            base.OnEnabled();
         }
 
         public override void OnDisabled()

@@ -11,7 +11,7 @@ namespace TeamKillDetector
         public override string Name => "TeamKillDetector";
         public override string Author => "Neil";
         public override Version Version => new Version(2, 0, 1);
-        public override Version RequiredExiledVersion => new Version(3, 0, 5);
+        public override Version RequiredExiledVersion => new Version(3, 7, 2);
 
         private EventHandlers _handler;
 
